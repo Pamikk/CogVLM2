@@ -179,7 +179,7 @@ class TorchTracemalloc:
         self.cpu_used = b2mb(self.cpu_end - self.cpu_begin)
         self.cpu_peaked = b2mb(self.cpu_peak - self.cpu_begin)
 
-
+import deepspeed
 def main():
     parser = argparse.ArgumentParser(description="Finetune a CogVLM model with LoRA")
     parser.add_argument("--lr", type=float, default=1e-7, help="Learning rate")
@@ -209,6 +209,7 @@ def main():
                         help="Path to save the finetuned model, must be a exit directory")
     parser.add_argument("--ds_config", type=str, default="ds_config.yaml",
                         help="DeepSpeed configuration file path")
+    parser = deepspeed.add_config_arguments(parser)
     args = parser.parse_args()
     args.torch_type = eval(args.torch_type)
 

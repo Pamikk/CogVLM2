@@ -1,0 +1,13 @@
+{
+    "comms_logger": {
+  "enabled": false,
+  "verbose": false,
+  "prof_all": false,
+  "debug": false
+},
+    "tensorboard": {
+    "enabled": true,
+    "output_path": "output/ds_logs/",
+    "job_name": "train_bert"
+}
+}
