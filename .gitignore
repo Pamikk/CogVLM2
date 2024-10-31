@@ -3,3 +3,5 @@ venv
 model_image
 model_video
 *.idea/
+output
+nohup.out
